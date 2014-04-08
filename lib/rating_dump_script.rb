@@ -1,21 +1,35 @@
 require './google-play.rb'
 require 'csv'
 
+def prompt(*args)
+  print(*args)
+  gets
+end
+app_bundle_name = ""
+num_reviews = 0
 # procedural code :(
 # also doesnt filter for uniques ... yet
+print("\n\n=======================================================\n=========== Google Play Store Review Scraper ==========\n=======================================================\n")
+while app_bundle_name == ""
+  app_bundle_name = prompt "app id: "
+end
 
+until num_reviews > 0
+  reviews = prompt "Number of reviews to harvest:  "
+  reviews.to_i!
+end
 # Get application id
-if ARGV[0].nil?
-	app_bundle_name = "com.microsoft.office.officehub"
-else
-	app_bundle_name = ARGV[0]
-end
+# if ARGV[0].nil?
+# 	app_bundle_name = "com.microsoft.office.officehub"
+# else
+# 	app_bundle_name = ARGV[0]
+# end
 
-if ARGV[1].nil?
-	num_reviews = 500
-else
-	num_reviews = ARGV[1].to_i
-end
+# if ARGV[1].nil?
+# 	num_reviews = 500
+# else
+# 	num_reviews = ARGV[1].to_i
+# end
 
 
 gp = GooglePlay.new
