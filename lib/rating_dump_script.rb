@@ -3,7 +3,7 @@ require 'csv'
 
 def prompt(*args)
   print(*args)
-  gets
+  gets.chomp
 end
 app_bundle_name = ""
 num_reviews = 0
