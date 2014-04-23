@@ -16,7 +16,7 @@ end
 
 until num_reviews > 0
   reviews = prompt "Number of reviews to harvest:  "
-  reviews = reviews.to_i
+  num_reviews = reviews.to_i
 end
 # Get application id
 # if ARGV[0].nil?
